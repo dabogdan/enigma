@@ -112,7 +112,7 @@ function permuteReverse(arrayOfRotors, letter) {
 // to save machine resources: Recursion happens only when the wheel makes the full round,
 // whereas loops would make iterations through all of the wheels array each time regardless.
 function tick(arrayOfRotors, i) {
-    if (arrayOfRotors[i].offset % arrayOfRotors[i].length === 0) {
+    if (arrayOfRotors[i+1].offset && arrayOfRotors[i].offset % arrayOfRotors[i].length === 0) {
         arrayOfRotors[i].offset = 1;
         return tick(arrayOfRotors, i + 1);
     } else {
